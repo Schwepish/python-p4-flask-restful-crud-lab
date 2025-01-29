@@ -1,31 +1,25 @@
-name: Sync with Canvas Ruby v2.7
-
-on:
-  push:
-    branches: [master, main]
-    paths:
-      - 'README.md'
-
-jobs:
-  sync:
-    name: Sync with Canvas
-
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v2
-
-      - name: Set up Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: 2.7
-
-      - name: Install github-to-canvas
-        run: gem install github-to-canvas
-
-      # Secret stored in learn-co-curriculum Settings/Secrets
-      - name: Sync from .canvas file
-        run: github-to-canvas -a -lr
-        env:
-          CANVAS_API_KEY: ${{ secrets.CANVAS_API_KEY }}
-          CANVAS_API_PATH: ${{ secrets.CANVAS_API_PATH }}
+{
+  "short_name": "React App",
+  "name": "Create React App Sample",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "logo192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "logo512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
